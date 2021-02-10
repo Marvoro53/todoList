@@ -1,6 +1,7 @@
 # todoList
 
 To do list exercise
+Author: Marvin Lara
 
 create new app
 
