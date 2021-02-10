@@ -1,26 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import "./Styles/style.css";
+import React, {Component} from "react";
+import "./Styles/Style.css";
+import Header from "./Components/Header";
+import Todos from "./Components/Todos"
+//ctrl space
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  state ={
+    tasks:["Task 1", "Task 2", "Task 3"]
+  };
+//delete button
+  handleDelete =(index) => {
+    const newArr= [...this.state.tasks]
+    newArr.splice(index,1);
+    this.setState({tasks: newArr});
+  }
+
+  render(){
+    return(
+      <div className="wrapper">
+        <div className="card-frame">
+          <Header numTodos={this.state.tasks.length} />
+          <Todos tasks={this.state.tasks} onDelete={this.handleDelete} />
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
