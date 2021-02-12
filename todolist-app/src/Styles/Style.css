@@ -1,0 +1,19 @@
+iframe{
+    float:left;
+    border: solid solid 5px;
+}
+.time{
+    float: center;
+    color: red;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px 20px;
+    width: 50px;
+    height: 50px;
+}
+
+input{
+    border: red;
+    box-shadow: black 2px 2px 2px;
+
+}

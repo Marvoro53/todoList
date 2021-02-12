@@ -3,6 +3,8 @@ import "./Styles/Style.css"
 import Header from "./Components/Header"; 
 import Todos from "./Components/Todos"; 
 import Submit from "./Components/Submit"; 
+import Widgets from "./Components/Widgets";
+
 class App extends Component {
   state = {
     tasks: ['Morning run' , 'Breakfast' , 'Work' ,"Walk the dog" , "Exercise", 'Eat', 'Read a book', "Sleep"]
@@ -20,6 +22,8 @@ class App extends Component {
   }
   render() {
     return(
+      <>
+      <Widgets />
       <div className='wrapper'>
         <div className='card frame'>
           <Header numTodos={this.state.tasks.length} />
@@ -27,6 +31,7 @@ class App extends Component {
           <Submit onFormSubmit={this.handleSubmit} />
         </div>
       </div>
+      </>
     );
   } 
 }
